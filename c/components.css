@@ -2549,3 +2549,77 @@ html body main>section#intro{min-height:0!important;height:auto!important}
 #ss.ss-modes #ssE{padding-top:0!important}
 #ss.ss-modes #ssE>h3{position:sticky;top:0;z-index:4;display:flex;align-items:center;min-height:76px;margin:0 calc(-1*clamp(22px,4vw,36px)) 12px!important;padding:12px 140px 12px clamp(22px,4vw,36px)!important;background:var(--n-50);border-bottom:1px solid var(--n-200);box-sizing:border-box;font-size:clamp(24px,2.2vw,28px)!important}
 #ss.ss-modes #ssE:has(form.is-done)>h3{display:none!important}
+/* v189 modes sheet: title bar + close fixed at the very top from the start; form scrolls; submit fixed at bottom */
+html body #ss.ss-modes #ssE,html body #ss.ss-modes #ssE:has(.ss-back[hidden]){padding-top:0!important}
+html body #ss.ss-modes #ssE>h3{position:sticky!important;top:0!important;margin-top:0!important}
+html body #ss.ss-modes .ss-x{top:16px!important;z-index:6}
+/* hero overlay: dark on the text side, fading to nothing by the middle of the frame */
+html body .hero::before{background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.55) 30%,rgba(0,0,0,.18) 48%,rgba(0,0,0,0) 56%)!important}
+html body .hero .hbg::after{background:none!important}
+@media(max-width:860px){html body .hero::before{background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.6))!important}}
+/* sticky cards: mode title beside its icon; content centred in the card */
+html body .cpk-w .cps-en li .cps-et,html body .cpk-w .cps-en li{position:relative}
+html body .cpk-w .cps-en li{display:grid!important;grid-template-columns:44px minmax(0,1fr);column-gap:14px;row-gap:10px!important;align-content:start}
+html body .cpk-w .cps-en li .cps-et{grid-column:1;grid-row:1;margin:0!important;align-self:center}
+html body .cpk-w .cps-en li>b{grid-column:2;grid-row:1;align-self:center;margin:0!important}
+html body .cpk-w .cps-en li>.cps-dur,html body .cpk-w .cps-en li>p{grid-column:1/-1}
+html body .cpk-w .cps-en li>.cps-dur{justify-self:start}
+html body .cpk-w .cps-ben li{display:grid!important;grid-template-columns:44px minmax(0,1fr);column-gap:14px;row-gap:10px;align-content:start}
+html body .cpk-w .cps-ben li>i{grid-column:1;grid-row:1;margin:0!important;align-self:center}
+html body .cpk-w .cps-ben li>b{grid-column:2;grid-row:1;align-self:center;margin:0!important}
+html body .cpk-w .cps-ben li>p{grid-column:1/-1;margin:0!important}
+html body .cpk-w .cps-c:nth-child(n) .cps-bd{padding-bottom:var(--cps-pb,32px)!important;justify-content:center!important;overflow:hidden!important}
+/* v190 details sheet re-layout: flat sections, who-first chips, benefit rows, compact enrol; matching fixed bottom bar on both steps */
+html body #ss #ssC .ss-v2{display:flex!important;flex-direction:column;gap:0!important}
+html body #ss #ssC .ss-head{order:0;padding-bottom:24px}
+html body #ss #ssC .ss-sec:has(.ss-who){order:1}
+html body #ss #ssC .ss-sec:has(.ss-ben){order:2}
+html body #ss #ssC .ss-sec:has(.ss-modes){order:3}
+html body #ss #ssC .ss-acts{order:4}
+html body #ss #ssC .ss-sec{background:none!important;border:0!important;border-top:1px solid var(--n-200)!important;border-radius:0!important;padding:22px 0 24px!important;margin:0!important;box-shadow:none!important}
+html body #ss #ssC .ss-sec h4{margin:0 0 14px!important;font:600 12px/1.2 var(--f-sans)!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--brand-600)!important}
+/* who: quick-scan chips */
+html body #ss #ssC .ss-sec .ss-who{display:flex!important;flex-wrap:wrap;gap:8px!important;padding:0!important;background:none!important;border-radius:0!important}
+html body #ss #ssC .ss-who li{display:inline-flex!important;align-items:center;padding:8px 14px!important;border:0!important;border-radius:999px;background:var(--n-100)!important;font:500 14px/1.35 var(--f-sans)!important;color:var(--n-900)}
+html body #ss #ssC .ss-who li+li{border-top:0!important}
+html body #ss #ssC .ss-who li i{display:none!important}
+/* benefits: rows with dividers */
+html body #ss #ssC .ss-ben{gap:0!important}
+html body #ss #ssC .ss-ben li{grid-template-columns:40px minmax(0,1fr)!important;gap:14px!important;padding:12px 0!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+html body #ss #ssC .ss-ben li+li{border-top:1px solid var(--n-200)!important}
+html body #ss #ssC .ss-ben i{width:40px!important;height:40px!important;border-radius:12px!important}
+html body #ss #ssC .ss-ben b{font:600 15px/1.35 var(--f-sans)!important}
+html body #ss #ssC .ss-ben span{font:400 14px/1.5 var(--f-sans)!important}
+/* enrol: compact tinted boxes */
+html body #ss #ssC .ss-sec .ss-modes{gap:8px!important}
+html body #ss #ssC .ss-modes li{background:var(--n-100)!important;border:0!important;padding:14px 12px!important;gap:6px!important;border-radius:14px!important}
+html body #ss #ssC .ss-modes i{width:34px!important;height:34px!important;background:var(--n-0)!important;margin:0 0 2px!important}
+html body #ss #ssC .ss-modes b{font:600 15px/1.25 var(--f-sans)!important}
+html body #ss #ssC .ss-modes .ss-dur{font:600 12px/1.3 var(--f-sans)!important;padding:4px 8px!important}
+html body #ss #ssC .ss-modes small{font:400 12.5px/1.4 var(--f-sans)!important}
+/* same full-width fixed button bar on both steps */
+html body #ss #ssC .ss-acts{margin:0 calc(-1*clamp(22px,4vw,32px))!important;padding:14px clamp(22px,4vw,32px) calc(14px + env(safe-area-inset-bottom,0px))!important;background:var(--n-50)!important;border-top:1px solid var(--n-200)!important}
+html body #ss #ssC .ss-acts .btn{width:100%!important;justify-content:center!important}
+html body #ss #ef>button[type=submit]{position:sticky!important;bottom:14px!important;z-index:3;width:100%!important;box-shadow:0 0 0 14px var(--n-50),0 -15px 0 0 var(--n-200)!important}
+html body #ss #ssE{padding-bottom:14px!important}
+/* v191 hero overlay modelled on the home flagship cards: soft green-black tint, deepening towards the bottom */
+html body .hero::before{background:linear-gradient(180deg,rgba(14,32,24,.30) 0%,rgba(14,32,24,.48) 40%,rgba(12,28,20,.78) 75%,rgba(10,24,17,.92) 100%)!important}
+@media(max-width:860px){html body .hero::before{background:linear-gradient(180deg,rgba(14,32,24,.35) 0%,rgba(12,28,20,.7) 60%,rgba(10,24,17,.92) 100%)!important}}
+html body .hero::before{background:none!important}
+html body .hero .hbg::after{content:""!important;position:absolute!important;inset:0!important;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(14,32,24,.18) 0%,rgba(14,32,24,.38) 40%,rgba(12,28,20,.72) 75%,rgba(10,24,17,.9) 100%)!important}
+@media(max-width:860px){html body .hero .hbg::after{background:linear-gradient(180deg,rgba(14,32,24,.35) 0%,rgba(12,28,20,.7) 60%,rgba(10,24,17,.92) 100%)!important}}
+/* v192 hero overlay: deep green on the text side, fading out across the photo (left to right) */
+html body .hero::before{background:none!important}
+html body .hero .hbg::after{content:""!important;position:absolute!important;inset:0!important;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(12,28,20,.95) 0%,rgba(12,28,20,.86) 26%,rgba(14,32,24,.55) 42%,rgba(14,32,24,.18) 55%,rgba(14,32,24,0) 66%)!important}
+@media(max-width:860px){html body .hero .hbg::after{background:linear-gradient(180deg,rgba(14,32,24,.3) 0%,rgba(12,28,20,.72) 55%,rgba(10,24,17,.94) 100%)!important}}
+/* v192 side sheet step 2: same full-width button bar, always at the bottom like step 1 */
+html body #ss:not(.ss-modes) #ssE:not([hidden]){display:flex!important;flex-direction:column;min-height:100%;padding-bottom:0!important}
+html body #ss:not(.ss-modes) #ef:not(.is-done){flex:1;display:flex!important;flex-direction:column;gap:14px}
+html body #ss:not(.ss-modes) #ef>button[type=submit]{position:sticky!important;bottom:0!important;margin:auto calc(-1*clamp(22px,4vw,36px)) 0!important;width:calc(100% + 2*clamp(22px,4vw,36px))!important;height:auto!important;padding:14px clamp(22px,4vw,36px) calc(14px + env(safe-area-inset-bottom,0px))!important;border-radius:0!important;background:var(--n-50)!important;border-top:1px solid var(--n-200)!important;box-shadow:none!important;font-size:0!important;color:transparent!important}
+html body #ss:not(.ss-modes) #ef>button[type=submit]::before{content:"Enquire now";display:flex;align-items:center;justify-content:center;height:52px;border-radius:999px;background:var(--brand-800);color:#fff;font:600 16px/1 var(--f-sans)}
+html body #ss:not(.ss-modes) #ef>button[type=submit].is-busy::before{content:"Sending…";opacity:.8}
+html body #ss:not(.ss-modes) #ef>button[type=submit]{display:block!important;text-align:center}
+html body #ss:not(.ss-modes) #ef>button[type=submit]::before{width:100%}
+@media(max-width:479px){#ss .ss-etop .ss-stp li.done span{display:none}}
+html body .hero .hbg::after{background:linear-gradient(90deg,rgba(12,28,20,.97) 0%,rgba(12,28,20,.92) 30%,rgba(14,32,24,.7) 44%,rgba(14,32,24,.3) 56%,rgba(14,32,24,0) 68%)!important}
+@media(max-width:860px){html body .hero .hbg::after{background:linear-gradient(180deg,rgba(14,32,24,.3) 0%,rgba(12,28,20,.72) 55%,rgba(10,24,17,.94) 100%)!important}}
